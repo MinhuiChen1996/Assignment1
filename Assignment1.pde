@@ -11,6 +11,7 @@ void draw()
 {
   background(0);
   steer.render();
+  steer.update();
   ship_rader.render();
   ship_rader.update();
 
