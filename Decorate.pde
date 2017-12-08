@@ -4,7 +4,7 @@ class Decorate
   
   Decorate()
   {
-  };
+  }
   
   void decorate()
   {
