@@ -1,46 +1,48 @@
 class Decorate
 {
-  PShape beside;
+  float y1;
+  float y2;
+
+  
+  PShape headDecorate;
   
   Decorate()
   {
+    
+  }
+  void decorate()
+  {  
+    y1 = 350;
+    y2 = 450;
+    headDecorate = createShape();
+    headDecorate.beginShape();
+    headDecorate.fill(255, 97, 0);
+    headDecorate.stroke(0,255,255);
+    headDecorate.vertex(0, 0);
+    headDecorate.vertex(0, y1);
+    headDecorate.vertex(100, y2);
+    headDecorate.vertex(200, y2);
+    headDecorate.vertex(300, y1);
+    headDecorate.vertex(width-300, y1);
+    headDecorate.vertex(width-200, y2);
+    headDecorate.vertex(width-100, y2);
+    headDecorate.vertex(width, y1);
+    headDecorate.vertex(width, 0);
+    headDecorate.endShape(CLOSE);
   }
   
-  void decorate()
+  void Activate()
   {
-    beside = createShape();
-    beside.beginShape();
-    beside.stroke(0,255,255);
-    beside.fill(0,255,255,1);
-    beside.vertex(0, 60);
-    beside.vertex(90, 50);
-    beside.vertex(110, 25);
-    beside.vertex(77, 0);
-    beside.vertex(0, 0);
-    beside.endShape(CLOSE);
+    rectMode(CENTER);
+    fill(0,255,255);
+    strokeJoin(BEVEL);
+    rect(width/2, height/2+80,80,50);
   }
-  void top_mid()
-  {
-    //quad(220, 0, 300, 100, 400, 100, 400, 0); // outside top-mid quad
-    //quad(250, 0, 300, 70, 400, 70, 400, 0);
-    line(220, 0, 300, 100);
-    line(300, 100, 400, 100);
-    line(250, 0, 300, 70);
-    line(300, 70, 400, 70);
-  }
+  
   void render()
   {
-    top_mid();
     decorate();
-    shape(beside, 0, 0);
-    stroke(0,255,255);
-    pushMatrix();  // mirroring shapes through by raotetY
-    fill(0,255,255,1);
-    translate(800, 0);
-    rotateY(PI);
-    shape(beside, 0, 0);
-    top_mid();
-    popMatrix();
+    shape(headDecorate,0,0);
+    Activate();
   }
-  
 }

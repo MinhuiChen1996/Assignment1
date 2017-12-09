@@ -10,16 +10,17 @@ class Bottom
   {
     controlpanel = createShape();
     controlpanel.beginShape();
+    controlpanel.fill(255, 97, 0);
     controlpanel.stroke(0,255,255);
     controlpanel.vertex(0,height);
-    controlpanel.vertex(0,200);
-    controlpanel.vertex(100,300);
-    controlpanel.vertex(200,300);
-    controlpanel.vertex(300,200);
-    controlpanel.vertex(width-300,200);
-    controlpanel.vertex(width-200,300);
-    controlpanel.vertex(width-100,300);
-    controlpanel.vertex(width,200);
+    controlpanel.vertex(0,350);
+    controlpanel.vertex(100,450);
+    controlpanel.vertex(200,450);
+    controlpanel.vertex(300,350);
+    controlpanel.vertex(width-300,350);
+    controlpanel.vertex(width-200,450);
+    controlpanel.vertex(width-100,450);
+    controlpanel.vertex(width,350);
     controlpanel.vertex(width,height);
     controlpanel.endShape(CLOSE);
   }
