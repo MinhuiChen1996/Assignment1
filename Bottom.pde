@@ -10,8 +10,8 @@ class Bottom
   {
     controlpanel = createShape();
     controlpanel.beginShape();
-    controlpanel.fill(255, 97, 0);
-    controlpanel.stroke(0,255,255);
+    controlpanel.fill(119, 136, 153);
+    //controlpanel.stroke(0,255,255);
     controlpanel.vertex(0,height);
     controlpanel.vertex(0,350);
     controlpanel.vertex(100,450);

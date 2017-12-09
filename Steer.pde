@@ -44,6 +44,7 @@ class Steer
   }
   void Steer_ball()
   {
+    lights();
     pushMatrix();
     translate(width/2, height/2+195);
     rotateY(radians(theta));
@@ -73,10 +74,6 @@ class Steer
   }
   void render()
   {
-    //line(0,225,800,225);
-    //line(400,0,400,450);
-    fill(0,255,255,1);
-    stroke(0,255,255);
     steering_wheel();
     Steer_ball();
     steerArc();
