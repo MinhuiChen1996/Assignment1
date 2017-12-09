@@ -53,6 +53,7 @@ class Steer
   }
   void direction()
   {
+    stroke(0, 255, 255);
     ellipse(400, 35, 70, 70);
     pushMatrix();
     translate(width/2, 35);
@@ -62,10 +63,11 @@ class Steer
     line(15, 15, 0, 0);
     line(0, 0, -15, 15);  
     popMatrix();
-    text("N", 400, 0);      //line(400,0, 400,35);
-    text("W", 365, 35);     //line(365, 35, 400, 35);
+    fill(255,0,0);
+    text("N", 395, 10);      //line(400,0, 400,35);
+    text("W", 365, 40);     //line(365, 35, 400, 35);
     text("S", 400, 70);     //line(400, 70, 400, 35);
-    text("E", 435, 35);     //line(435, 35, 400, 35);
+    text("E", 425, 40);     //line(435, 35, 400, 35);
 
   }
   void render()
