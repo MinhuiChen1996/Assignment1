@@ -27,11 +27,13 @@ class Decorate
     headDecorate.vertex(width, 0);
     headDecorate.endShape(CLOSE);
   }
-  
+  void time()
+  {
+    text(hour()+":"+minute()+":"+second(),100,30);
+  }
   void Activate()
   {
     rectMode(CENTER);
-    //fill(0,255,255);
     strokeWeight(5);
     strokeJoin(BEVEL);
     fill(255,0,0);
@@ -40,23 +42,24 @@ class Decorate
   }
   void mousePressed()
   {
-    float tlx = width/2 - 20;
+    float tlx = width/2 - 40;
     float tly = height/2+90 - 25;
-    if(mouseX > tlx && mouseX < tlx + 20 && mouseY > tly && mouseY < tly + 25)
-    {
-      if(frameCount % 20==0)
-      {
-        if(y1 > 70 && y2 > 170)
+    if(mouseX > tlx && mouseX < tlx + 80 && mouseY > tly && mouseY < tly + 50)
+     {
+       if(mousePressed)
         {
-          y1-=10;
-          y2-=10;
-        }
-        decorate();
-      }
+        if(y1 > 70 && y2 > 170)
+         {
+            y1-=10;
+            y2-=10;
+         }
+         decorate();
+       }
     }
   }
   void render()
   {
+    time();
     mousePressed();
     shape(headDecorate,0,0);
     Activate();
