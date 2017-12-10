@@ -4,6 +4,7 @@ class Steer
   float y = height;
   float theta = 0;
   float rotSpeed = 0.8f;
+  float forward = 0;
   
   Steer()
   {
@@ -12,6 +13,7 @@ class Steer
   void steering_wheel()
   {
     fill(0);
+    stroke(0, 255, 255);
     ellipse(width/2, height/2+200, 150, 150);
     ellipse(width/2, height/2+200, 125, 125);
   }
@@ -40,14 +42,24 @@ class Steer
       {
         theta += rotSpeed;
       }
+      if (key==('w'))
+      {
+        forward += rotSpeed * 3;
+      }
+      if (key==('s'))
+      {
+        forward -= rotSpeed * 3;
+      }
     }
   }
   void Steer_ball()
   {
     lights();
+    stroke(0, 255, 255);
     pushMatrix();
     translate(width/2, height/2+195);
-    rotateY(radians(theta));
+    rotateZ(radians(theta));
+    rotateY(forward);
     sphereDetail(10);  // 
     sphere(120/2);  // size
     popMatrix();
@@ -66,6 +78,7 @@ class Steer
     line(0, 0, -15, 15);  
     popMatrix();
     fill(255,0,0);
+    textSize(15);
     text("N", width/2-5, 10);      
     text("W", width/2-35, 40);
     text("S", width/2, 70);

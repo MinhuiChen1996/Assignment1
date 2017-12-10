@@ -15,8 +15,9 @@ class Bar
     noStroke();
     //quad(width/2, height/2+175, width/2+175+fuel,height/2+175, width/2+175+fuel, height/2+225, width/2+175, height/2+175+50);
     rect(width/2+85, height/2+175, fuel, 40);
-    textSize(15);
+    textSize(25);
     text("Fuel: "+int(fuel), width/2+85, height/2+170);
+    noFill();
   }
   
   void speeedbar()
@@ -29,8 +30,9 @@ class Bar
     noStroke();
     //quad(width/2, height/2+250, width/2+175+speed,height/2+250, width/2+175+speed, height/2+300, width/2+175, height/2+300);
     rect(width/2+85, height/2+250, speed, 40);
-    textSize(15);
+    textSize(25);
     text("Speed: "+int(speed), width/2+85, height/2+245);
+    noFill();
   }
   
   void speed()
