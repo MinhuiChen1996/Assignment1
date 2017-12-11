@@ -28,6 +28,7 @@ class Menu
   void render()
   {
     table();
+    decorate.fan();
     shape(controlpanel, 0, 0);
   }
 }

@@ -25,9 +25,9 @@ void setup()
   planets[3] = new Planet(-30,30,12,"Gl 905",22000, "Tiangong 1");
   planets[4] = new Planet(40,50,9,"Lacaille 9352",19000,"Mir");
   
-  for(int i = 0; i< 500; i++)
+  for(int i = 0; i< 1000; i++)
   {
-    Space star = new Space(random(0,width*2), random(0, height), random(1,4));
+    Space star = new Space(random(0,width), random(0, height), random(1,4));
     stars.add(star);
   }
   
@@ -39,31 +39,17 @@ void drawStar()
   {
     s.update();
     s.render();
+    /*
+    if(s.posx < 0 || s.posx > width || s.posy < 0 || s.posy > height)
+    {
+      stars.remove(this);
+    }
+    int total = stars.size();
+    println(total);
+    */
   }
 }
 
-/*
-void newStar()
-{
-  for(int i = 0; i< stars.length; i++)
-  {
-    starNo+=1;
-    
-    //if((stars[i].posx > width/2-50 && stars[i].posy >height/2 -50)||(stars[i].posx > width/2-50 && stars[i].posy < height/2 +50) 
-    //||(stars[i].posx < width/2+50 && stars[i].posy >height/2 -50)||(stars[i].posx < width/2+50 && stars[i].posy <height/2 +50))
-    //{
-      
-     // if(starNo < 50)
-      //{
-     //   for(int x=0; x <=50; x ++)
-      //  {
-     //     stars[i] = new Space(random(0,width*2), random(0, height), random(1,4));
-     //   }
-    //  }
-    //}
-  }
-}
-*/
 void drawPlanet()
 {
   for(int i = 0; i< planets.length; i++)

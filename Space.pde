@@ -24,13 +24,6 @@ class Space
       }
     }
   }
-  void newStars()
-  {
-    for(int i = 0; i< 30; i++)
-    {
-      ellipse(random(0,width*2), random(0, height), random(1,4), random(1,4));
-    }
-  }
   void forward()
   {
     if(posx<width/2 && posy <height/2)
@@ -54,11 +47,29 @@ class Space
       posy+=bar.speed/60;
     }
   }
-
+  
+ /* void newStar()
+  {
+    if(bar.speed > 0)
+    {
+      pushMatrix();
+      translate(width/2, height/2, 0);
+      noStroke();
+      noFill();
+      fill(255);
+      for(int i = 0; i< 20; i++)
+      {
+        ellipse(posx/10,posy/10,size,size);
+      }
+      popMatrix();
+    }
+  }
+   */
   void update()
   {
     move();
     forward();
+    //newStar();
   }
   
   void render()

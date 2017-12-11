@@ -66,6 +66,25 @@ class Decorate
     ellipse(30, y, 50, 50);
     popMatrix();
   }
+  void update()
+  {
+    
+  }
+  
+  void fan()
+  {
+    pushMatrix();
+    translate(radar.cx, height-radar.cy+15, 3);
+    rotate(PI*frameCount/5);
+    fill(0);
+    ellipse(0, 0, 150,150);
+    fill(255);
+    noStroke();
+    rect(0,-5,60,20);
+    rect(-50,-5,60,20);
+    ellipse(0,0,30,30);
+    popMatrix();
+  }
   
   void Activate()
   { 
@@ -84,22 +103,23 @@ class Decorate
     popMatrix();
     ifClicked();
   }
+  
   void ifClicked()
   {
     float tlx = width/2 - 40;
     float tly = height/2+75;
     if(mouseX > tlx && mouseX < tlx + 80 && mouseY > tly && mouseY < tly + 40)
      {
-       if(mousePressed == true)
-        {
-        if(y1 > 70 && y2 > 170)
-         {
-            y1-=10;
-            y2-=10;
+         if(mousePressed == true)
+          {
+          if(y1 > 70 && y2 > 170)
+           {
+              y1-=10;
+              y2-=10;
+           }
+           start = true;
+           decorate();
          }
-         start = true;
-         decorate();
-       }
     }
   }
   void render()
