@@ -5,6 +5,7 @@ class Decorate
   float y2 = 450.0;
   float speed = 0.05;
   PShape headDecorate;
+  boolean start = false;
   
   Decorate()
   {
@@ -36,15 +37,25 @@ class Decorate
   }
   void ball()
   {
-    
     float gravity = abs(y * 0.1);
     y-=speed*gravity;
     if((y < 405 )||(y > 575 ))
     {
       speed=-speed;
     }
-    fill(255);
+    fill(y/10,y/10,y/10);
     ellipse(975, y, 50, 50);
+  }
+  void ball2()
+  {
+    float gravity = abs(y * 0.1);
+    y-=speed*gravity;
+    if((y < 405 )||(y > 575 ))
+    {
+      speed=-speed;
+    }
+    fill(y/10,y/10,y/10);
+    ellipse(25, y, 50, 50);
   }
   
   void Activate()
@@ -74,6 +85,7 @@ class Decorate
             y1-=10;
             y2-=10;
          }
+         start = true;
          decorate();
        }
     }
@@ -82,6 +94,7 @@ class Decorate
   {
     time();
     ball();
+    ball2();
     mousePressed();
     shape(headDecorate,0,0);
     Activate();

@@ -10,6 +10,7 @@ class Bar
   void fuelbar()
   {
     rectMode(CORNER);
+    fill(0);
     rect(width/2+85, height/2+175, 180, 40);
     fill(0,255,0);
     noStroke();
