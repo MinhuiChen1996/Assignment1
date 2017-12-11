@@ -9,6 +9,8 @@ class Bar
   
   void fuelbar()
   {
+    pushMatrix();
+    translate(0, 0, 3);
     rectMode(CORNER);
     fill(0);
     rect(width/2+85, height/2+175, 180, 40);
@@ -19,10 +21,13 @@ class Bar
     textSize(25);
     text("Fuel: "+int(fuel), width/2+85, height/2+170);
     noFill();
+    popMatrix();
   }
   
   void speeedbar()
   {
+    pushMatrix();
+    translate(0, 0, 3);
     rectMode(CORNER);
     stroke(1);
     fill(0);
@@ -34,6 +39,7 @@ class Bar
     textSize(25);
     text("Speed: "+int(speed), width/2+85, height/2+245);
     noFill();
+    popMatrix();
   }
   
   void speed()

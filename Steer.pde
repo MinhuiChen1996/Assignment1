@@ -12,15 +12,18 @@ class Steer
   }
   void steering_wheel()
   {
+    pushMatrix();
+    translate(0, 0, 3);
     fill(0);
     stroke(0, 255, 255);
     ellipse(width/2, height/2+200, 150, 150);
     ellipse(width/2, height/2+200, 125, 125);
+    popMatrix();
   }
   void steerArc()
   {
     pushMatrix();
-    translate(width/2,height/2+200);
+    translate(width/2,height/2+200, 3);
     rotate(radians(theta));
     stroke(255, 255, 0);
     strokeWeight(10);
@@ -54,10 +57,10 @@ class Steer
   }
   void Steer_ball()
   {
+    pushMatrix();
+    translate(width/2, height/2+195, 1);
     lights();
     stroke(0, 255, 255);
-    pushMatrix();
-    translate(width/2, height/2+195);
     rotateZ(radians(theta));
     rotateY(forward);
     sphereDetail(10);  // 
@@ -66,23 +69,26 @@ class Steer
   }
   void direction()
   {
+    pushMatrix();
+    translate(width/2, 35, 3);
     fill(0);
     stroke(0, 255, 255);
-    ellipse(width/2, 35, 70, 70);
-    pushMatrix();
-    translate(width/2, 35);
     rotate(radians(theta));
     line(-15, 15, 0, -15);
     line(0 , -15,  15, 15);
     line(15, 15, 0, 0);
     line(0, 0, -15, 15);  
     popMatrix();
+    pushMatrix();
+    translate(0, 0, 3);
+    ellipse(width/2, 35, 70, 70);
     fill(255,0,0);
     textSize(15);
     text("N", width/2-5, 10);      
     text("W", width/2-35, 40);
     text("S", width/2, 70);
     text("E", width/2+25, 40);
+    popMatrix();
 
   }
   void render()

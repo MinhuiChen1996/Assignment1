@@ -12,7 +12,9 @@ class Decorate
     
   }
   void decorate()
-  {  
+  { 
+    pushMatrix();
+    translate(0, 0, 2);
     headDecorate = createShape();
     headDecorate.beginShape();
     headDecorate.fill(119, 136, 153);
@@ -28,12 +30,13 @@ class Decorate
     headDecorate.vertex(width, y1);
     headDecorate.vertex(width, 0);
     headDecorate.endShape(CLOSE);
+    popMatrix();
   }
   void time()
   {
     textSize(50);
     fill(255);
-    text(hour()+":"+minute()+":"+second(), 35, 100);
+    text(hour()+":"+minute()+":"+second(), 35, 100, 3);
   }
   void ball()
   {
@@ -44,41 +47,50 @@ class Decorate
       speed=-speed;
     }
     fill(y/10,y/10,y/10);
-    ellipse(975, y, 50, 50);
+    pushMatrix();
+    translate(0, 0, 3);
+    ellipse(970, y, 50, 50);
+    popMatrix();
   }
   void ball2()
   {
     float gravity = abs(y * 0.1);
     y-=speed*gravity;
-    if((y < 405 )||(y > 575 ))
+    if((y < 415 )||(y > 575 ))
     {
       speed=-speed;
     }
     fill(y/10,y/10,y/10);
-    ellipse(25, y, 50, 50);
+    pushMatrix();
+    translate(0, 0, 3);
+    ellipse(30, y, 50, 50);
+    popMatrix();
   }
   
   void Activate()
   { 
+    pushMatrix();
+    translate(0, 0, 3);
     stroke(0, 255, 255);
-    rectMode(CENTER);
-    rect(825,-height-170/2, 50, 170);
     strokeWeight(5);
     strokeJoin(BEVEL);
     fill(255,0,0);
-    rect(width/2, height/2+90,80,50);
+    rectMode(CORNER);
+    rect(width/2-40, height/2+75,80,40);
     textSize(15);
     fill(255);
-    text("ACTIVATE", width/2-35, height/2+95);
+    text("ACTIVATE", width/2-35, height/2+100);
     strokeWeight(1);
+    popMatrix();
+    ifClicked();
   }
-  void mousePressed()
+  void ifClicked()
   {
     float tlx = width/2 - 40;
-    float tly = height/2+90 - 25;
-    if(mouseX > tlx && mouseX < tlx + 80 && mouseY > tly && mouseY < tly + 50)
+    float tly = height/2+75;
+    if(mouseX > tlx && mouseX < tlx + 80 && mouseY > tly && mouseY < tly + 40)
      {
-       if(mousePressed)
+       if(mousePressed == true)
         {
         if(y1 > 70 && y2 > 170)
          {
@@ -95,7 +107,6 @@ class Decorate
     time();
     ball();
     ball2();
-    mousePressed();
     shape(headDecorate,0,0);
     Activate();
   }

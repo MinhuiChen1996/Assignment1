@@ -20,7 +20,7 @@ class Radar
   void radarcenter()
   {
     pushMatrix();
-    translate(cx, cy);
+    translate(cx, cy, 3);
     line(-15, 15, 0, -15);
     line(0, -15, 15, 15);
     line(15, 15, 0, 0);
@@ -34,6 +34,8 @@ class Radar
 
   void render()
   {
+    pushMatrix();
+    translate(0, 0, 3);
     stroke(0, 255, 255);
     line(850,height-150, 850, height);
     line(850-75, height - 75, 850+75, height-75);
@@ -71,5 +73,6 @@ class Radar
           radarSize2 = 0;
       }
     }
+    popMatrix();
   }
 }

@@ -2,10 +2,10 @@
 Decorate decorate;
 Steer steer;
 Radar radar;
-Bottom bottom;
+Menu menu;
 Bar bar;
 Star[] stars = new Star[5];
-
+Shield shield;
 void setup()
 {
   size(1000,600,P3D);
@@ -13,8 +13,9 @@ void setup()
   radar = new Radar(850, 525, 75, 0.5);
   decorate = new Decorate();
   steer = new Steer();
-  bottom = new Bottom();
+  menu = new Menu();
   bar = new Bar();
+  shield = new Shield();
   
   stars[0] = new Star(10,20,5,"Rigel B",10000, "orbit");
   stars[1] = new Star(30,20,8,"UV Ceti A",13000, "Skylab");
@@ -32,9 +33,12 @@ void drawStar()
 
 void infoBoard()
 {
+  pushMatrix();
+  translate(0, 0, 3);
   rectMode(CORNER);
   fill(0);
   rect(250,400, 170,200);
+  popMatrix();
 }
 
 void draw()
@@ -45,7 +49,7 @@ void draw()
   if(decorate.start == true)
   {
     stroke(0, 255, 255);
-    bottom.render();
+    menu.render();
     bar.render();
     steer.render();
     steer.update();
@@ -53,5 +57,7 @@ void draw()
     radar.update();
     infoBoard();
     drawStar();
+    shield.render();
   }
+
 }
