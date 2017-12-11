@@ -11,14 +11,13 @@ class Decorate
   {
     
   }
+  // draw a pshape
   void decorate()
   { 
-    //pushMatrix();
-  //  translate(0, 0, 2);
     headDecorate = createShape();
     headDecorate.beginShape();
     headDecorate.fill(119, 136, 153);
-    headDecorate.stroke(0,255,255, 2);
+    headDecorate.stroke(0,255,255);
     headDecorate.vertex(0, 0, 2);
     headDecorate.vertex(0, y1, 2);
     headDecorate.vertex(100, y2, 2);
@@ -30,14 +29,16 @@ class Decorate
     headDecorate.vertex(width, y1, 2);
     headDecorate.vertex(width, 0, 2);
     headDecorate.endShape(CLOSE);
-   // popMatrix();
   }
+  // counting time
   void time()
   {
     textSize(50);
     fill(255);
+    text(day()+"/"+month()+"/"+year(), 35, 50, 3);
     text(hour()+":"+minute()+":"+second(), 35, 100, 3);
   }
+  // two ball one on left side, one on right side 
   void ball()
   {
     float gravity = abs(y * 0.1);
@@ -66,26 +67,22 @@ class Decorate
     ellipse(30, y, 50, 50);
     popMatrix();
   }
-  void update()
-  {
-    
-  }
-  
+  // ship fan
   void fan()
   {
     pushMatrix();
     translate(radar.cx, height-radar.cy+15, 3);
-    rotate(PI*frameCount/5);
+    rotate(PI*frameCount/10);
     fill(0);
     ellipse(0, 0, 150,150);
     fill(255);
     noStroke();
-    rect(0,-5,60,20);
-    rect(-50,-5,60,20);
-    ellipse(0,0,30,30);
+    rect(0,-5,60,10);
+    rect(-60,-5,60,10);
+    ellipse(0,0,15,15);
     popMatrix();
   }
-  
+  // button
   void Activate()
   { 
     pushMatrix();
@@ -103,7 +100,7 @@ class Decorate
     popMatrix();
     ifClicked();
   }
-  
+  // click button
   void ifClicked()
   {
     float tlx = width/2 - 40;

@@ -22,6 +22,7 @@ class Shield
     popMatrix();
     ifClicked();
   }
+  // draw shield
   void shieldBall()
   {
     pushMatrix();

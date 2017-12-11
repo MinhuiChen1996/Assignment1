@@ -20,7 +20,7 @@ class Steer
     ellipse(width/2, height/2+200, 125, 125);
     popMatrix();
   }
-  void steerArc()
+  void handle()
   {
     pushMatrix();
     translate(width/2,height/2+200, 3);
@@ -59,6 +59,7 @@ class Steer
     sphere(120/2);  // size
     popMatrix();
   }
+  //compass
   void direction()
   {
     pushMatrix();
@@ -87,7 +88,7 @@ class Steer
   {
     steering_wheel();
     Steer_ball();
-    steerArc();
+    handle();
     direction();
   }
 }

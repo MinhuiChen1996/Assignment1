@@ -16,7 +16,7 @@ class Radar
     this.frequency =frequency;
     this.speed = (TWO_PI / 60.0) * frequency;
   }
-
+// draw radar middle ship
   void radarcenter()
   {
     pushMatrix();
@@ -31,7 +31,7 @@ class Radar
   {
     theta += speed;
   }
-
+  // draw radar
   void render()
   {
     pushMatrix();

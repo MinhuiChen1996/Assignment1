@@ -18,6 +18,7 @@ class Planet
     this.Length = Length;
     this.spaceStation= spaceStation;
   }
+  // if click planet display planetinfo
   void click()
   {
     float d = dist(radar.cx+posx,radar.cy+posy,mouseX, mouseY);
@@ -25,12 +26,13 @@ class Planet
     {
       if(text==true)
       {
-        starInfo();
+        planetInfo();
         //text=false;
       }
     }
   }
-  void starInfo()
+  // planet details
+  void planetInfo()
   {
     pushMatrix();
     translate(0, 0, 3);
@@ -47,7 +49,8 @@ class Planet
     text(spaceStation, 252, 595);
     popMatrix();
   }
-
+  
+  //draw
   void render()
   {
     pushMatrix();

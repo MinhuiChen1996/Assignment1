@@ -10,6 +10,7 @@ class Space
     this.posy = posy;
     this.size = size;
   }
+  // when ship move star move
   void move()
   {
     if(keyPressed)
@@ -48,23 +49,6 @@ class Space
     }
   }
   
- /* void newStar()
-  {
-    if(bar.speed > 0)
-    {
-      pushMatrix();
-      translate(width/2, height/2, 0);
-      noStroke();
-      noFill();
-      fill(255);
-      for(int i = 0; i< 20; i++)
-      {
-        ellipse(posx/10,posy/10,size,size);
-      }
-      popMatrix();
-    }
-  }
-   */
   void update()
   {
     move();
