@@ -45,14 +45,6 @@ class Steer
       {
         theta += rotSpeed;
       }
-      if (key==('w'))
-      {
-        forward += rotSpeed * 3;
-      }
-      if (key==('s'))
-      {
-        forward -= rotSpeed * 3;
-      }
     }
   }
   void Steer_ball()
@@ -62,7 +54,7 @@ class Steer
     lights();
     stroke(0, 255, 255);
     rotateZ(radians(theta));
-    rotateY(forward);
+    rotateY(PI*frameCount/(200-bar.speed));
     sphereDetail(10);  // 
     sphere(120/2);  // size
     popMatrix();

@@ -35,8 +35,8 @@ class Shield
   }
   void ifClicked()
   {
-    float tlx = width/2+80;
-    float tly = height/2+55;
+    float tlx = width/2+120;
+    float tly = height/2+75;
     if(mouseX > tlx && mouseX < tlx + 80 && mouseY > tly && mouseY < tly + 40 && mousePressed == true)
     {
       shieldBall();

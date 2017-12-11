@@ -1,4 +1,4 @@
-class Star
+class Planet
 {
   float posx;
   float posy;
@@ -9,7 +9,7 @@ class Star
   boolean text = true;
   String spaceStation;
   
-  Star(float posx, float posy, float radius, String starname, float Length,String spaceStation)
+  Planet(float posx, float posy, float radius, String starname, float Length,String spaceStation)
   {
     this.posx = posx;
     this.posy = posy;
@@ -57,7 +57,7 @@ class Star
     fill(255, 255, 0);
     if(bar.speed > 0)
     {
-      posy = posy+bar.speed/3000;
+      posy = posy+bar.speed/5000;
     }
     ellipse(posx, posy, radius*2, radius*2);
     noFill();

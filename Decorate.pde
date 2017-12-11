@@ -13,24 +13,24 @@ class Decorate
   }
   void decorate()
   { 
-    pushMatrix();
-    translate(0, 0, 2);
+    //pushMatrix();
+  //  translate(0, 0, 2);
     headDecorate = createShape();
     headDecorate.beginShape();
     headDecorate.fill(119, 136, 153);
-    headDecorate.stroke(0,255,255);
-    headDecorate.vertex(0, 0);
-    headDecorate.vertex(0, y1);
-    headDecorate.vertex(100, y2);
-    headDecorate.vertex(200, y2);
-    headDecorate.vertex(300, y1);
-    headDecorate.vertex(width-300, y1);
-    headDecorate.vertex(width-200, y2);
-    headDecorate.vertex(width-100, y2);
-    headDecorate.vertex(width, y1);
-    headDecorate.vertex(width, 0);
+    headDecorate.stroke(0,255,255, 2);
+    headDecorate.vertex(0, 0, 2);
+    headDecorate.vertex(0, y1, 2);
+    headDecorate.vertex(100, y2, 2);
+    headDecorate.vertex(200, y2, 2);
+    headDecorate.vertex(300, y1, 2);
+    headDecorate.vertex(width-300, y1, 2);
+    headDecorate.vertex(width-200, y2, 2);
+    headDecorate.vertex(width-100, y2, 2);
+    headDecorate.vertex(width, y1, 2);
+    headDecorate.vertex(width, 0, 2);
     headDecorate.endShape(CLOSE);
-    popMatrix();
+   // popMatrix();
   }
   void time()
   {
