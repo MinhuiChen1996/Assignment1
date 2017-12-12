@@ -54,7 +54,7 @@ class Steer
     lights();
     stroke(0, 255, 255);
     rotateZ(radians(theta));
-    rotateY(PI*frameCount/(200-bar.speed));
+    rotateY(PI*frameCount/(182-bar.speed));
     sphereDetail(10);  // 
     sphere(120/2);  // size
     popMatrix();

@@ -100,12 +100,12 @@ class Bar
   //calculate fuel
   void fuel()
   {
-    if(frameCount % 60 ==0)
+    if(frameCount % 30 ==0)
     {
 
       if(fuel > 0 )
       {
-        fuel = fuel - speed/70;
+        fuel = fuel - speed/60;
         if(fuel < 0)
         {
           fuel = 0;
