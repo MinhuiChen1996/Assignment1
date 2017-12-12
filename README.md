@@ -10,3 +10,9 @@ Screen shots:
 ![alt text](https://github.com/MinhuiChen1996/Assignment1/blob/master/Data/oop_3.png "Shield Open")
 ![alt text](https://github.com/MinhuiChen1996/Assignment1/blob/master/Data/oop_4.png "Planet Detail")
 ![alt text](https://github.com/MinhuiChen1996/Assignment1/blob/master/Data/oop_5.png "No Fuel and O2")
+#Code Challange
+one challange is to draw stars. I need a lots of stars, if I draw each star need a lots of time. So I use the arraylist to drawstar, just a few line draw one thousand stars.
+Second challage is how to implement space shield. I use sphere function to draw a very large ball and put the spaceship in the ball. 
+
+#Youtube video
+[!](https://github.com/MinhuiChen1996/Assignment1/blob/master/Data/oop_6.png)<a href="https://www.youtube.com/watch?v=HdtjXp0Jvzs">
