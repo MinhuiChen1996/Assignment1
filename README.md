@@ -15,4 +15,4 @@ one challange is to draw stars. I need a lots of stars, if I draw each star need
 Second challage is how to implement space shield. I use sphere function to draw a very large ball and put the spaceship in the ball. 
 
 # Youtube video
-![alt text](https://github.com/MinhuiChen1996/Assignment1/blob/master/Data/oop_6.png)<a href="https://www.youtube.com/watch?v=HdtjXp0Jvzs">
+![alt text](https://github.com/MinhuiChen1996/Assignment1/blob/master/Data/oop_6.png)<a href="https://www.youtube.com/watch?v=HdtjXp0Jvzs"></a>
